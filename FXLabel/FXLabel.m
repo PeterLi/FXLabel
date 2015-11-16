@@ -572,7 +572,7 @@
         
         NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
         style.lineBreakMode = lineBreakMode;
-        [self drawInRect:CGRectMake(0, 0, size.width, size.height) withAttributes:@{NSFontAttributeName: subFont, NSParagraphStyleAttributeName: style, NSForegroundColorAttributeName: color ?: [UIColor blackColor]}];
+        [self drawInRect:CGRectMake(0, 0, size.width + 1.0f /* pli - tweak factor to prevent dropping off of words */, size.height) withAttributes:@{NSFontAttributeName: subFont, NSParagraphStyleAttributeName: style, NSForegroundColorAttributeName: color ?: [UIColor blackColor]}];
         
 #else
         
